@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
-import 'p_signin.dart';
-import 's_signin.dart';
+import 'package:virus_gps_system/pages/gps_tracker.dart';
+import 'pages/p_signin.dart';
+import 'pages/s_signin.dart';
+import 'package:provider/provider.dart';
+
+import 'services/location_service.dart';
+import 'models/user_location.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -35,6 +40,15 @@ class MyApp extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => StoreSignIn()),
+                );
+              },
+            ),
+            RaisedButton(
+              child: Text('Store'),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => GpsTracker()),
                 );
               },
             ),
