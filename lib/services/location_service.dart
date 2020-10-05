@@ -31,7 +31,7 @@ class LocationService {
       _curLocation = UserLocation(
           latitude: userLocation.latitude, longitude: userLocation.longitude);
     } catch (e) {
-      print("can't take your location baby");
+      print("can't take your location baby :)");
     }
 
     return _curLocation;

@@ -4,10 +4,18 @@ import 'package:http/http.dart' as http;
 import 'dart:async';
 
 class UserLocation {
+  final int id;
   final double latitude;
   final double longitude;
 
-  UserLocation({this.latitude, this.longitude});
+  UserLocation({this.id, this.latitude, this.longitude});
+
+  factory UserLocation.fromJson(Map<String, dynamic> json) {
+    return UserLocation(
+        id: json['id'],
+        latitude: json['latitude'],
+        longitude: json['longitude']);
+  }
 }
 
 class DataInfo {
@@ -16,7 +24,7 @@ class DataInfo {
   DataInfo({this.dataLatitude, this.dataLongitude});
 
   DataInfo.fromJson(
-      Map<String, dynamic> json, this.dataLatitude, this.dataLongitude) {}
+      Map<String, dynamic> json, this.dataLatitude, this.dataLongitude);
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();

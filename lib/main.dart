@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:virus_gps_system/pages/gps_tracker.dart';
 import 'pages/p_signin.dart';
 import 'pages/s_signin.dart';
+import 'pages/qr_generator_page.dart';
+import 'pages/qr_scaner_page.dart';
 import 'package:provider/provider.dart';
 
 import 'services/location_service.dart';
@@ -22,7 +24,7 @@ class MyApp extends StatelessWidget {
         title: Text('Corona keeper'),
       ),
       body: Center(
-        child: Row(
+        child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             RaisedButton(
@@ -44,11 +46,29 @@ class MyApp extends StatelessWidget {
               },
             ),
             RaisedButton(
-              child: Text('Store'),
+              child: Text('GPS'),
               onPressed: () {
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => GpsTracker()),
+                );
+              },
+            ),
+            RaisedButton(
+              child: Text('QR make'),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => GeneratePage()),
+                );
+              },
+            ),
+            RaisedButton(
+              child: Text('QR recog'),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => ScanPage()),
                 );
               },
             ),
