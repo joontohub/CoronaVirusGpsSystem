@@ -4,10 +4,7 @@ import 'pages/p_signin.dart';
 import 'pages/s_signin.dart';
 import 'pages/qr_generator_page.dart';
 import 'pages/qr_scaner_page.dart';
-import 'package:provider/provider.dart';
-
-import 'services/location_service.dart';
-import 'models/user_location.dart';
+import 'pages/google_signin.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -27,6 +24,15 @@ class MyApp extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            RaisedButton(
+              child: Text('Google signin'),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => GoogleSignSystem()),
+                );
+              },
+            ),
             RaisedButton(
               child: Text('People'),
               onPressed: () {
