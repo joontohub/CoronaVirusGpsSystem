@@ -9,8 +9,8 @@ class GeneratePage extends StatefulWidget {
 }
 
 class GeneratePageState extends State<GeneratePage> {
-  String qrData =
-      "https://github.com/neon97"; // already generated qr code when the page opens
+  //need to add another function to make qrData with Encrypto
+  String qrData = "https://google.com";
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +26,6 @@ class GeneratePageState extends State<GeneratePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             QrImage(
-              //plce where the QR Image will be shown
               data: qrData,
             ),
             SizedBox(
@@ -36,10 +35,11 @@ class GeneratePageState extends State<GeneratePage> {
               "New QR Link Generator",
               style: TextStyle(fontSize: 20.0),
             ),
+            //I need to add another function to make qrCode Gen.
             TextField(
               controller: qrdataFeed,
               decoration: InputDecoration(
-                hintText: "Input your link or data",
+                hintText: "Input your link or data to make QRCode Baby :)",
               ),
             ),
             Padding(
