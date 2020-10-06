@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:virus_gps_system/pages/gps_tracker.dart';
-import 'pages/p_signin.dart';
+import 'pages/private_data.dart';
 import 'pages/s_signin.dart';
 import 'pages/qr_generator_page.dart';
 import 'pages/qr_scaner_page.dart';
 import 'pages/google_signin.dart';
+import 'pages/login.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -29,7 +30,7 @@ class MyApp extends StatelessWidget {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => GoogleSignSystem()),
+                  MaterialPageRoute(builder: (context) => HomeWidget()),
                 );
               },
             ),
